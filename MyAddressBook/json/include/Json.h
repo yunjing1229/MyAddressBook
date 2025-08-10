@@ -9,7 +9,6 @@ class Json
 public:
 	enum Type
 	{
-		JSOM_NULL,
 		JSON_BOOL,
 		JSON_STRING,
 		JSON_NUMBER,
@@ -37,5 +36,4 @@ private:
 };
 
 #endif
-
 
