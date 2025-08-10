@@ -20,9 +20,6 @@ public:
 	static Json Object();
 	static Json Array();
 	static Json Parse(const std::string& str);
-	
-
-
 	Json();
 	explicit Json(const char* str);
 	explicit Json(double fValue);
@@ -40,4 +37,5 @@ private:
 };
 
 #endif
+
 
