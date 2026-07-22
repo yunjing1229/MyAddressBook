@@ -2,7 +2,6 @@
 
 JsonBool::JsonBool(bool bValue) : m_bValue(bValue)
 {
-
 }
 
 Json::Type  JsonBool::type() const
@@ -12,7 +11,6 @@ Json::Type  JsonBool::type() const
 
 JsonBase* JsonBool::clone() const
 {
-
     return new JsonBool(m_bValue);
 }
 
