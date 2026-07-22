@@ -1,7 +1,6 @@
 #include "JsonArray.h"
 #include <sstream>
 
-
 Json::Type  JsonArray::type() const
 {
     return Json::JSON_ARRAY;
@@ -66,8 +65,3 @@ Json& JsonArray::operator[](size_t index)
     }
     return m_arrValue[index];
 }
-
-
-
-
-
