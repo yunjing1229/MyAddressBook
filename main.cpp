@@ -16,7 +16,6 @@ int main()
     bool bCreate = true;
     std::string filename = "contacts.DB";
     FILE* file = fopen(filename.c_str(), "r");
- 
     if (file != NULL)
     {
         fseek(file, 0, SEEK_END);
@@ -26,23 +25,20 @@ int main()
             bCreate = false;
         }
     }
-  
     if (bCreate)
     {
         test.CreateTable();
         test.UpdateData("INSERT INTO contacts (name, address, email, telephone, company, created_time, relationship)"
-            " values(\"wang\", \"东方路\", \"wang@163.com\", \"14355\", \"\", 1, 2);");
+            " values(\"wang\", \"露芦路陆脗路\", \"wang@163.com\", \"14355\", \"\", 1, 2);");
         test.UpdateData("INSERT INTO contacts (name, address, email, telephone, company, created_time, relationship)"
-            " values(\"li\", \"南京路\", \"li@163.com\", \"12875\", \"\", 1, 2);");
+            " values(\"li\", \"脛脧戮漏脗路\", \"li@163.com\", \"12875\", \"\", 1, 2);");
         test.UpdateData("INSERT INTO contacts (name, address, email, telephone, company, created_time, relationship)"
-            " values(\"liu\", \"锦绣路\", \"liu@163.com\", \"19865\", \"\", 1, 2);");
+            " values(\"liu\", \"陆玫脨氓脗路\", \"liu@163.com\", \"19865\", \"\", 1, 2);");
     }
     std::vector<ContactInfo> contacts;
     test.GetData("SELECT * FROM contacts", contacts);
-    
     Json Addressbook = Json::Object();
     Json contact = Json::Array();
-    
     for (ContactInfo text : contacts)
     {
         Json ID = Json::Object();
@@ -51,12 +47,8 @@ int main()
         ID.set("Address", Json(text.strAddress));
         ID.set("Email", Json(text.strEmail));
         contact.append(ID);
-
-    }
-    
+    }    
     Addressbook.set("contact", contact);
     cout << Addressbook.toString();
-
-				return 0;
-
+	return 0;
 }
