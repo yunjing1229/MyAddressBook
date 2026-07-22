@@ -1,15 +1,12 @@
 #include "JsonString.h"
 #include <sstream>
 
-
 JsonString::JsonString(std::string strValue) : m_strValue(strValue)
 {
-
 }
 
 JsonBase* JsonString::clone() const
 {
-
     return new JsonString(m_strValue);
 }
 
@@ -43,7 +40,6 @@ std::string JsonString::toString() const
         case '\n': oss << "\\n"; break;
         case '\r': oss << "\\r"; break;
         case '\t': oss << "\\t"; break;
-
         default:
             if (static_cast<unsigned char>(*it) < 0x20 || *it == 0x7f)
             {
