@@ -20,7 +20,6 @@ char JsonParser::getNextChar()
     return m_str[m_pos++];
 }
 
-
 char JsonParser::peekNextChar()
 {
     skipWhiteSpace();
@@ -56,13 +55,11 @@ Json JsonParser::parseObject()
         except(':');
         Json value = parseValue();
         result.set(key, value);
-
         char c = getNextChar();
         if (c == '}')
         {
             return result;
         }
-  
         else if (c != ',')
         {
             throw runtime_error("unexcept end of Json object");
@@ -104,7 +101,6 @@ Json JsonParser::parseNumber()
 {
     size_t pos = m_pos - 1;
     bool isDouble = false;
-
     if (m_str[pos] == '-')
     {
         ++m_pos;
@@ -134,7 +130,6 @@ Json JsonParser::parseNumber()
         }
     }
     std::string numstr = m_str.substr(pos, m_pos - pos);
-
     if (isDouble)
     {
         char* end;
@@ -154,7 +149,6 @@ Json JsonParser::parseNumber()
             throw runtime_error("invslid double");
         }
         return Json(static_cast<int>(value));
-
     }
 }
 
@@ -163,17 +157,14 @@ Json JsonParser::parseArray()
     Json result = Json::Array();
     m_pos--;
     except('[');
-
     if (peekNextChar() == ']')
     {
         getNextChar();
         return result;
     }
-
     while (true)
     {
         result.append(parseValue());
-
         char c = getNextChar();
         if (']' == c)
         {
@@ -187,11 +178,9 @@ Json JsonParser::parseArray()
 }
 
 JsonParser::JsonParser(const std::string& str) : m_str(str), m_pos(0) {}
-
 Json JsonParser::parseValue()
 {
     char c = getNextChar();
-
     switch (c)
     {
     case 'f':
@@ -219,8 +208,6 @@ Json JsonParser::parseValue()
         return parseNumber();
     default:
     {
-
     }
-    }
-    
+    }    
 }
