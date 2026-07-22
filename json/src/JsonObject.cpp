@@ -6,7 +6,6 @@ bool JsonObject::isObject() const
     return true;
 }
 
-
 Json::Type  JsonObject::type() const
 {
     return Json::JSON_OBJECT;
@@ -46,7 +45,6 @@ Json& JsonObject::operator[](const std::string& key)
         throw std::runtime_error("key not found" + key);
     }
     return it->second;
-  
 }
 
 size_t JsonObject::size() const
