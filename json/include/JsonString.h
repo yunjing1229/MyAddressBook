@@ -1,6 +1,5 @@
 #ifndef _JSONSTRING_H_
 #define _JSONSTRING_H_
-
 #include "JsonBase.h"
 #include <iomanip>
 
@@ -16,6 +15,4 @@ public:
 private:
     std::string m_strValue;
 };
-
 #endif
-
