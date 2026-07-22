@@ -17,6 +17,4 @@ public:
     size_t size() const;
     void append(const Json& value);
 };
-
 #endif
-
