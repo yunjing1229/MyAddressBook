@@ -1,6 +1,5 @@
 #ifndef _JSONNUMBER_H_
 #define _JSONNUMBER_H_
-
 #include "JsonBase.h"
 
 class JsonNumber : public JsonBase
@@ -16,6 +15,4 @@ public:
     double asDouble() const;
     int asInt() const;
 };
-
 #endif
-
