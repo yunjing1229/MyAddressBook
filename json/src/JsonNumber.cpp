@@ -8,7 +8,6 @@ Json::Type JsonNumber::type() const
 
 JsonNumber::JsonNumber(double nValue): m_nValue(nValue)
 {
-
 }
 
 JsonBase* JsonNumber::clone() const
