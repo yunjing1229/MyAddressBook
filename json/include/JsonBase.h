@@ -15,11 +15,7 @@ public:
 				virtual void append(const Json& value) { }
 				virtual Json& operator[](const std::string& key) { throw std::runtime_error("unexcept end of str"); }//{ throw std::runtime_error("unexcept end of str"); }
 				virtual Json& operator[](size_t index) { throw std::runtime_error("unexcept end of str"); }
-				virtual const Json& operator[](size_t index) const{ throw std::runtime_error("unexcept end of str"); }
-	 
+				virtual const Json& operator[](size_t index) const{ throw std::runtime_error("unexcept end of str"); }	 
 };
-
-
-
 #endif
 
