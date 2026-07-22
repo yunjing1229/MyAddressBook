@@ -3,7 +3,6 @@
 #include <string>
 
 class JsonBase;
-
 class Json
 {
 public:
@@ -15,7 +14,6 @@ public:
 		JSON_ARRAY,
 		JSON_OBJECT
 	};
-
 	static Json Object();
 	static Json Array();
 	static Json Parse(const std::string& str);
@@ -32,8 +30,6 @@ public:
 	void set(const std::string& key, const Json& value);
 	void append(const Json& value);
 private:
-				JsonBase* m_pValue;
+	JsonBase* m_pValue;
 };
-
 #endif
-
