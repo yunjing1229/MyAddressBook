@@ -1,6 +1,5 @@
 #ifndef _JSONBOOL_H_
 #define _JSONBOOL_H_
-
 #include "JsonBase.h"
 
 class JsonBool : public JsonBase
@@ -15,5 +14,4 @@ public:
 private:
     bool m_bValue;
 };
-
 #endif
