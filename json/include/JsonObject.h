@@ -18,8 +18,5 @@ public:
     size_t size() const;
     bool has(const std::string& key) const;
     void set(const std::string& key, const Json& value);
-
 };
-
 #endif
-
