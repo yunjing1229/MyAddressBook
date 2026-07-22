@@ -21,7 +21,5 @@ private:
 public:
     JsonParser(const std::string& str);
     Json parseValue();
-
 };
-
 #endif
