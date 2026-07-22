@@ -7,8 +7,6 @@
 #include "JsonParser.h"
 #include "JsonBase.h"
 
-
-
 std::string Json::toString() const
 {
   return m_pValue->toString();
@@ -16,19 +14,15 @@ std::string Json::toString() const
 
 Json::Json()
 {
-
 }
 
 Json::Json(double fValue) : m_pValue(new JsonNumber(fValue))
 {
-
 }
 
 Json::Json(int nValue) : m_pValue(new JsonNumber(nValue))
 {
-
 }
-
 
 Json::Json(const std::string& str)
 {
@@ -42,12 +36,10 @@ Json::Json(const char* str)
 
 Json::Json(bool bValue) : m_pValue(new JsonBool(bValue))
 {
-
 }
 
 Json::Json(JsonBase* pValue) : m_pValue(pValue)
 {
-
 }
 
 Json Json::Object()
@@ -64,7 +56,6 @@ Json Json::Parse(const std::string& str)
 {
     JsonParser parse(str);
     return parse.parseValue();
-
 }
 
 void Json::set(const std::string& strKey, const Json& value)
